@@ -3,5 +3,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def homePageView_C(request):
-    return HttpResponse('For second time, Hello, World!')
+def CommentsView(request):
+    return render(request,'comments.html',{})

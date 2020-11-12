@@ -1,8 +1,8 @@
 #comments/urls.py
 from django.urls import path
 
-from .views import homePageView_C
+from .views import CommentsView
 
 urlpatterns=[
-    path('',homePageView_C,name="homeC")
+    path('',CommentsView,name="Comments")
 ]
