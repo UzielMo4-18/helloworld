@@ -18,3 +18,14 @@ class Publicacion(models.Model):
 
     def __str__(self):
         return self.titulo
+
+#Modelo de comentarios
+class Comentario(models.Model):
+    autor_comentario=models.ForeignKey(Autor,on_delete=models.CASCADE)
+    fecha_comentario=models.DateField()
+    contenido_comentario=models.CharField(max_length=125)
+    id_publicacion=models.ForeignKey(Publicacion,on_delete=models.CASCADE)
+    reaccion=models.IntegerField()
+
+    def __str__(self):
+        return self.contenido_comentario
