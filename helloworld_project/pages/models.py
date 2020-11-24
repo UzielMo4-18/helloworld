@@ -22,10 +22,10 @@ class Publicacion(models.Model):
 #Modelo de comentarios
 class Comentario(models.Model):
     autor_comentario=models.ForeignKey(Autor,on_delete=models.CASCADE)
-    fecha_comentario=models.DateField()
+    fecha_comentario=models.DateTimeField(auto_now_add=True)
     contenido_comentario=models.CharField(max_length=125)
     id_publicacion=models.ForeignKey(Publicacion,on_delete=models.CASCADE)
-    reaccion=models.IntegerField()
+    reaccion=models.IntegerField(default=0)
 
     def __str__(self):
         return self.contenido_comentario
